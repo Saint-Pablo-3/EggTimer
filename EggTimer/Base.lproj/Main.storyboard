@@ -1,24 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aYp-t8-joe">
+                                <rect key="frame" x="8" y="0.0" width="359" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eck-IC-fJe" userLabel="Title View">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="209"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you like your eggs?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6s-8U-VIo">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="209"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="a6s-8U-VIo" secondAttribute="bottom" id="FLQ-X2-723"/>
+                                            <constraint firstItem="a6s-8U-VIo" firstAttribute="top" secondItem="Eck-IC-fJe" secondAttribute="top" id="UAf-62-2H1"/>
+                                            <constraint firstAttribute="trailing" secondItem="a6s-8U-VIo" secondAttribute="trailing" id="VTY-mn-Wod"/>
+                                            <constraint firstItem="a6s-8U-VIo" firstAttribute="leading" secondItem="Eck-IC-fJe" secondAttribute="leading" id="gJd-AX-q0N"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WaQ-Nz-W2O">
+                                        <rect key="frame" x="0.0" y="229" width="359" height="209"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdC-eD-V2x" userLabel="Soft Egg View">
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="209"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soft_egg" translatesAutoresizingMaskIntoConstraints="NO" id="3qJ-sz-fmM" userLabel="Soft Egg ImageView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="209"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tt-Ac-kPl" userLabel="Soft Egg Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="209"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Soft">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="hardnessSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LeJ-jj-MmY"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="3qJ-sz-fmM" secondAttribute="trailing" id="4Dv-dA-sN2"/>
+                                                    <constraint firstItem="6Tt-Ac-kPl" firstAttribute="leading" secondItem="mdC-eD-V2x" secondAttribute="leading" id="6qL-1H-iPC"/>
+                                                    <constraint firstItem="6Tt-Ac-kPl" firstAttribute="top" secondItem="mdC-eD-V2x" secondAttribute="top" id="7sX-Pd-5Z5"/>
+                                                    <constraint firstItem="3qJ-sz-fmM" firstAttribute="leading" secondItem="mdC-eD-V2x" secondAttribute="leading" id="DYT-cG-OQR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6Tt-Ac-kPl" secondAttribute="bottom" id="LUN-TR-faF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6Tt-Ac-kPl" secondAttribute="trailing" id="cLJ-LC-Wm8"/>
+                                                    <constraint firstItem="3qJ-sz-fmM" firstAttribute="top" secondItem="mdC-eD-V2x" secondAttribute="top" id="s7W-AM-c1n"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3qJ-sz-fmM" secondAttribute="bottom" id="xdo-2D-Bk4"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qau-WW-ZaO" userLabel="Medium Egg View">
+                                                <rect key="frame" x="123" y="0.0" width="113" height="209"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medium_egg" translatesAutoresizingMaskIntoConstraints="NO" id="y9m-Ic-Avh" userLabel="Medium Egg ImageView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="209"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-iv-r6U" userLabel="Medium Egg Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="209"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Medium">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="hardnessSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3at-Rd-dcq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ehu-iv-r6U" secondAttribute="trailing" id="43t-Dn-3VW"/>
+                                                    <constraint firstItem="ehu-iv-r6U" firstAttribute="leading" secondItem="Qau-WW-ZaO" secondAttribute="leading" id="4qy-6T-GGm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="y9m-Ic-Avh" secondAttribute="trailing" id="D2Q-5O-cMf"/>
+                                                    <constraint firstItem="y9m-Ic-Avh" firstAttribute="leading" secondItem="Qau-WW-ZaO" secondAttribute="leading" id="bg3-Sg-pyd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ehu-iv-r6U" secondAttribute="bottom" id="fgg-vQ-o7p"/>
+                                                    <constraint firstItem="ehu-iv-r6U" firstAttribute="top" secondItem="Qau-WW-ZaO" secondAttribute="top" id="jHE-Po-FBF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="y9m-Ic-Avh" secondAttribute="bottom" id="oYA-f5-GJl"/>
+                                                    <constraint firstItem="y9m-Ic-Avh" firstAttribute="top" secondItem="Qau-WW-ZaO" secondAttribute="top" id="rph-mQ-TzY"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eK-RZ-J3D" userLabel="Hard Egg View">
+                                                <rect key="frame" x="246" y="0.0" width="113" height="209"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hard_egg" translatesAutoresizingMaskIntoConstraints="NO" id="U4p-nK-ATs" userLabel="Hard Egg ImageView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="209"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP2-R6-wsW" userLabel="Hard Egg Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="209"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Hard">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="hardnessSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m03-0d-K2r"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="eP2-R6-wsW" secondAttribute="trailing" id="0bT-du-jE5"/>
+                                                    <constraint firstItem="eP2-R6-wsW" firstAttribute="top" secondItem="4eK-RZ-J3D" secondAttribute="top" id="DOG-6g-t2B"/>
+                                                    <constraint firstItem="eP2-R6-wsW" firstAttribute="leading" secondItem="4eK-RZ-J3D" secondAttribute="leading" id="HVa-co-Kyn"/>
+                                                    <constraint firstItem="U4p-nK-ATs" firstAttribute="leading" secondItem="4eK-RZ-J3D" secondAttribute="leading" id="Y2V-43-wmQ"/>
+                                                    <constraint firstItem="U4p-nK-ATs" firstAttribute="top" secondItem="4eK-RZ-J3D" secondAttribute="top" id="iUS-ye-kUC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="U4p-nK-ATs" secondAttribute="bottom" id="lvw-2a-rCG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eP2-R6-wsW" secondAttribute="bottom" id="r8z-Ed-yJf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="U4p-nK-ATs" secondAttribute="trailing" id="zIg-SK-DZO"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWy-R0-nWr" userLabel="Timer View">
+                                        <rect key="frame" x="0.0" y="458" width="359" height="209"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Eww-mi-vun">
+                                                <rect key="frame" x="33" y="102.5" width="293" height="4"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="4" id="sKg-sT-qAr"/>
+                                                </constraints>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Eww-mi-vun" firstAttribute="centerY" secondItem="rWy-R0-nWr" secondAttribute="centerY" id="6OJ-gP-Mbf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Eww-mi-vun" secondAttribute="trailing" constant="33" id="UPD-dX-yFu"/>
+                                            <constraint firstItem="Eww-mi-vun" firstAttribute="leading" secondItem="rWy-R0-nWr" secondAttribute="leading" constant="33" id="dWe-Pt-9oX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="aYp-t8-joe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MVb-YH-qBx"/>
+                            <constraint firstAttribute="bottom" secondItem="aYp-t8-joe" secondAttribute="bottom" id="Uq9-gc-4s4"/>
+                            <constraint firstAttribute="trailing" secondItem="aYp-t8-joe" secondAttribute="trailing" constant="8" id="aAw-hw-pYG"/>
+                            <constraint firstItem="aYp-t8-joe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="clJ-FE-7yV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressBar" destination="Eww-mi-vun" id="pRU-yk-oyP"/>
+                        <outlet property="titleLabel" destination="a6s-8U-VIo" id="3DC-6x-GJy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="11.594202898550726" y="-2.6785714285714284"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hard_egg" width="287.5" height="366"/>
+        <image name="medium_egg" width="288" height="363"/>
+        <image name="soft_egg" width="287" height="365"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
